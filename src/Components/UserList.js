@@ -5,9 +5,9 @@ class UserList extends React.Component{
     render(){
         return (
             <div>
-                <h2>User List</h2>
+                <h2 className="dc">USER LIST</h2>
                 {this.props.users.map((user) => {
-                    return <UserItem  user = {user}/>;
+                    return <UserItem  user = {user} key={user.id}deleteUser={this.props.deleteUser}/>;
                 })}
             
             </div>

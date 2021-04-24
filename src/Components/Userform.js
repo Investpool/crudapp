@@ -12,7 +12,7 @@ class Userform extends React.Component{
         };
     }
     //set the value of what is typed by user into the state
-    handleOnChange = (event) => {
+    onChangeHandler = (event) => {
         this.setState(
            { [event.target.name] : event.target.value} //gets the value for whatever was typed and puts it in the respective inputs
         )
@@ -20,33 +20,43 @@ class Userform extends React.Component{
 
     handleSubmit = () => {
         this.props.addUser(this.state);
+        this.setState({
+            username : "",
+            email : "",
+            country : "",
+            password : ""
+        })
     }
+
 
     render(){
         return (
-            <div>
-                <form>
-                    <h2>SignUp Form</h2>
-                    <label>Username</label> <br></br>
-                    <input type = "text" name = "username" value = {this.state.username} onChange = {this.handleOnChange}></input> <br></br>
+    <div>
+        <form className="paint">
+            <h2>SIGN UP</h2>
+            <label>Username</label> <br></br>
+            <input type = "text" name = "username" value = {this.state.username} 
+            onChange = {this.onChangeHandler}></input> <br></br>
 
-                    <label>Email</label> <br></br>
-                    <input type = "text" name = "email" value = {this.state.email} onChange = {this.handleOnChange}></input> <br></br>
+            <label>Email</label> <br></br>
+            <input type = "text" name = "email" value = {this.state.email} 
+            onChange = {this.onChangeHandler}></input> <br></br>
 
-                    <label>Country</label> <br></br>
-                    <input type = "text" name = "country" value = {this.state.country} onChange = {this.handleOnChange}></input> <br></br>
+            <label>Country</label> <br></br>
+            <input type = "text" name = "country" value = {this.state.country} 
+            onChange = {this.onChangeHandler}></input> <br></br>
 
-                    <label>Password</label> <br></br>
-                    <input type = "password" name = "password" value = {this.state.password} onChange = {this.handleOnChange}></input> <br></br>
+            <label>Password</label> <br></br>
+            <input type = "password" className="black" name = "password" value = {this.state.password} 
+            onChange = {this.onChangeHandler}></input> <br></br>
 
-                    <br></br>
-                    
-                    <button type="button" onClick = {this.handleSubmit}>Create User</button>
-                </form>
-            </div>
+            <br></br>
+            
+            <button type="button" className="user" onClick = {this.handleSubmit}>CREAT USER</button>
+        </form>
+    </div>
         )
     }
 }
 
-export default UserForm;
-
+export default Userform;
