@@ -27,7 +27,9 @@ class App extends React.Component{
       users : this.state.users.filter(user => user.id !==id)
     })
    }
- 
+   updateUser = (id) =>{
+     //this.setState
+   }
 
 
   render(){
