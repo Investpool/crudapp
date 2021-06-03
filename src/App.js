@@ -7,16 +7,16 @@ class App extends React.Component{
   constructor(props){
     super(props)
     this.state = {
-      users : [] //setting up an empty array here so that the users can be updated here
+      users : [] 
 
     }
   }
 
-  //a function that will take the list of users
+ 
   addUser = (user) => {
     user.id = 100 * Math.random() * 100000;
     this.setState({
-      users :[...this.state.users, user] //copying each user into the array
+      users :[...this.state.users, user] 
     })
 
     console.log({user});
@@ -28,7 +28,7 @@ class App extends React.Component{
     })
    }
    updateUser = (id) =>{
-     //this.setState
+     
    }
 
 

@@ -11,10 +11,10 @@ class Userform extends React.Component{
             password : ""
         };
     }
-    //set the value of what is typed by user into the state
+    
     onChangeHandler = (event) => {
         this.setState(
-           { [event.target.name] : event.target.value} //gets the value for whatever was typed and puts it in the respective inputs
+           { [event.target.name] : event.target.value} 
         )
     }
 
